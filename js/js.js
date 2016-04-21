@@ -80,5 +80,34 @@ function factorial(number){
 		return number*factorial(number-1)
 	};
 };
-console.log(factorial(5));
+//console.log(factorial(5));
+
+//分隔符
+var sentence="my+name+is+shinyy";
+var word=sentence.split("+");
+for(var i=0;i<word.length;i++){
+	//console.log("word"+i+":"+word[i]);
+}
+//console.log(word)
+
+//数组的浅复制(复制的新数组依然指向原数组，所以原数组改变时也会改变新数组)
+var num=[];
+for(var i=0;i<100;i++){
+	num[i]=i+1;
+}
+var newArr=num;
+num[0]=400;
+//console.log(newArr[0])
+
+//数组的深复制（深度克隆：不指向原数组  所以原数组改变也不影响新数组）
+function copyArr(arr1,arr2){
+	for(var i=0;i<arr1.length;i++){
+		arr2[i]=arr1[i];
+	}
+};
+var shuzu1=[1,5,45787,15757,0];
+var shuzu2=[];
+copyArr(shuzu1,shuzu2);
+shuzu1[0]=222;
+//console.log(shuzu2[0]);
 
