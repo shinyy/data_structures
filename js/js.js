@@ -111,3 +111,46 @@ copyArr(shuzu1,shuzu2);
 shuzu1[0]=222;
 //console.log(shuzu2[0]);
 
+
+//sort排序
+var arr3=[100,200,2,1,3,400,4];
+arr3.sort();//sort是字典排序  并不符合要求 此时arr3=[1, 100, 2, 200, 3, 4, 400]
+function compare(num1,num2){
+	return num1-num2;
+}
+arr3.sort(compare)
+//console.log(arr3);//此时符合预期
+
+
+//foreach迭代 (对数组每个元素使用一个函数)
+function aquare(num){
+	console.log(num,num+1);
+}
+var arr4=[1,2,3,4,5,6,7]
+//arr4.forEach(aquare)
+
+
+//字符串反转
+var word="hello,world!"
+var wordArry=word.split("");
+var newWord=[];
+for(var j=wordArry.length-1,i=0;j>=0;j--,i++){
+		newWord[i]=wordArry[j]
+};
+var newW="";
+for(var i=0;i<newWord.length;i++){
+	newW+=newWord[i];
+}
+//console.log(newW);
+
+//二维数组的最大值
+var lArry=[[2,22],[3,5,99],[999,22666,55],[9992,226661,515]];
+for(var i=0;i<lArry.length;i++){
+	var largNum=0;
+	for(var j=0;j<lArry[i].length;j++){
+		if(lArry[i][j]>largNum){
+			largNum=lArry[i][j]
+		}
+	}
+}
+console.log(largNum)
